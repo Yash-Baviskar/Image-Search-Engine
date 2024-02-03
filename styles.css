@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+}
+.search{
+    height: 50vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+.content{
+    position: relative;
+    color: #fff;
+    z-index: 2;
+}
+.content h1{
+    font-size: 50px;
+}
+.content p{
+    font-size: 22px;
+    text-align: center;
+    margin-top: 8px;
+}
+.search_box{
+    height: 55px;
+    margin-top: 35px;
+    position: relative;
+}
+.search_box button{
+    
+    background: none;
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+.search_box button i{
+    color: #8d8d8d;
+    font-size: 18px;
+    transition: 0.2s;
+}
+.search_box i:hover{
+    color: #111;
+}
+input,button,i{
+    border: none;
+    outline: none;
+    
+}
+.search_box input{
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    padding-left: 15px ;
+    border-radius: 8px;
+}
+.search_box input:focus{
+    outline: 2px solid#2de6bb;
+}
+.gallery{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.gallery .images{
+    margin-top: 25px;
+    max-width: 95%;
+    gap: 15px;
+    columns: 5 340px;
+}
+.images .card{
+    list-style: none;
+    margin-bottom: 15px;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    
+}
+.card .details{
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    background: linear-gradient(to top,rgba(0,0,0,0.7),transparent);
+    display: flex;
+    padding: 12px;
+    transition: bottom 0.2s ease;
+    justify-content:space-between ;
+}
+.card:hover .details{
+    bottom: 0;
+}
+.details .photographer{
+    color: #fff;
+    font-size: 17px;
+}
+.details button{
+    border-radius: 5px;
+    font-size: 17px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.details button:hover{
+    color: #fff;
+    background: #2de6bb;
+}
+.images img{
+    width: 100%;
+    border-radius: 5px;
+}
+.load{
+    margin: 40px 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 5px;
+    background-color:#2de6bb ;
+    transition: 0.2s;
+}
+.load.disabled{
+    opacity: 0.6;
+    pointer-events: none;
+}
+.load:hover{
+    color: #2de6bb;
+    background: #fff;
+    outline: 2px solid#2de6bb;
+}
+.lightbox{
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: rgba(0,0,0,0.65);
+}
+.lightbox.show{
+    display: block;
+}
+.lightbox .wrapper{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    max-width: 850px;
+    background: #fff;
+    padding: 20px;
+}
+.wrapper header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .photographer{
+    display: flex;
+    align-items: center;
+}
+header .photographer i{
+    font-size: 25px;
+    margin-right: 5px;
+}
+header .photographer span{
+    font-size: 18px;
+}
+header .buttons i{
+    padding: 8px 10px;
+    border: 1px solid #8d8d8d;
+    cursor: pointer;
+    font-size: 20px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+header .buttons i:hover{
+    background: #2de6bb;
+    color: #fff;
+    border: none;
+}
+.preview-img{
+    display: flex;
+    justify-content: center;
+}
+.wrapper .preview-img .img{
+    max-height: 65vh;
+    max-width: 90vh;
+}
+.preview-img .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
